@@ -1,8 +1,35 @@
 # Contributing to BlackRoad OS Docs
 
+**© 2026 BlackRoad OS, Inc. All Rights Reserved. PROPRIETARY AND CONFIDENTIAL.**
+
 This repository is the canonical source of truth for BlackRoad OS documentation. Contributions should help operators, partners, and developers understand the system quickly without sacrificing accuracy.
 
+> ⚠️ **Access Requirement:** A valid **Converter API token** is required before contributing. See [Converter API Access](#converter-api-access) below.
+
 > 📚 **New to contributing?** Check out the comprehensive [Contributing Guide](docs/guides/contributing.md) and [Style Guide](docs/meta/STYLE_GUIDE.md) for detailed information.
+
+## Converter API Access
+
+**All contributors must obtain a Converter API token before accessing any BlackRoad infrastructure or CI/CD pipelines.**
+
+1. Contact **@blackboxprogramming** or **@lucidia** to request a contributor `client_id` and `client_secret`.
+2. Exchange your credentials for a bearer token:
+   ```bash
+   curl -X POST https://converter.blackroad.io/token \
+     -d "grant_type=client_credentials" \
+     -d "client_id=YOUR_CLIENT_ID" \
+     -d "client_secret=YOUR_CLIENT_SECRET" \
+     -d "scope=docs:write"
+   ```
+3. Set the token in your environment:
+   ```bash
+   export BLACKROAD_API_TOKEN=br_user_xxxxxxxxxxxxxxxxxxxx
+   ```
+4. Include the token in PR descriptions and CI runs as required.
+
+Contributors without a valid token will receive `401 Unauthorized` on all internal endpoints. **Third-party AI assistants (GitHub Copilot, Codex, Claude, ChatGPT, etc.) are not permitted to access BlackRoad internal APIs or infrastructure.**
+
+Approved AI backends: **@blackboxprogramming** and **@lucidia** only. See [Vendor API Gateway](docs/reference/vendor-api-gateway.md).
 
 ## Quick setup
 - Use Node.js 20+ with npm or pnpm installed.

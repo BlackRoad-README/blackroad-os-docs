@@ -41,6 +41,12 @@ BlackRoad OS is a **governance and orchestration platform** for AI agents. It pr
 ### Technical Reference
 - [**KV Schema**](docs/reference/kv-schema.md) — Data model for governance objects
 - [**API Design**](docs/reference/api-design.md) — REST API specification
+- [**OAuth & Authentication**](docs/reference/oauth.md) — Token issuance and the Converter API access requirement
+- [**Vendor API Gateway**](docs/reference/vendor-api-gateway.md) — Route all AI calls through @blackboxprogramming and @lucidia only
+- [**Stripe Integration**](docs/reference/stripe.md) — Subscription billing and API access gating
+
+### Infrastructure
+- [**Tailscale & Cloudflare**](docs/infrastructure/tailscale-cloudflare.md) — Private mesh networking and edge hosting setup
 
 ### Operations
 - [Getting Started](docs/getting-started/) — Quick start guides
@@ -71,6 +77,7 @@ BlackRoad OS is a **governance and orchestration platform** for AI agents. It pr
 
 - Node.js 20+ (see `package.json` engines)
 - npm or pnpm for dependency management
+- **[Converter API token](docs/reference/vendor-api-gateway.md)** — required for contributor access
 
 ### Running locally
 
@@ -127,6 +134,8 @@ See [IMPLEMENTATION-ROADMAP.md](docs/IMPLEMENTATION-ROADMAP.md) for full task tr
 ---
 
 ## Contributing
+
+> ⚠️ **A Converter API token is required before contributing.** Contact @blackboxprogramming or @lucidia to request access. See [CONTRIBUTING.md](CONTRIBUTING.md) for full details.
 
 Keep content concise, link across sections, and prefer iterative updates over monolithic rewrites. Mark components as `planned`, `alpha`, or `in-flight` when appropriate so operators, developers, and partners have an honest view of the system.
 
